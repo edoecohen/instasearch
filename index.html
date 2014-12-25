@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>InstaSearch</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+	<link rel="icon" href="images/insta.png" />
+	<link rel="stylesheet" href="style.css" />
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+	<script src="app.js"></script>
+</head>
+	
+<body ng-app='app' ng-controller='MainCtrl'>
+
+	<div class="container" ng-show="landing">
+		<div class="landing row" >
+			<div class="logo col-xs-12">
+				<img src="images/insta.png" />
+				<h1>InstaSearch</h1>
+			</div>
+			<form>
+				<input type="text" name="query" size="30" autofocus required>
+				<input type="submit" value="Submit">
+			</form>
+		</div>
+	</div>
+
+	<div class="navbar navbar-static-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<img src="images/insta.png" />
+				<h2>InstaSearch</h2>
+			</div>
+			<form class="searchBar navbar-form navbar-left" role="search">
+				<input type="text" name="query" size="30" autofocus required>
+				<div class="searchButton">
+					<input type="image" class="searchbutton" name="search" src="images/search.png" alt="Search">
+				</div>				
+			</form>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="resultCount">
+				8 results for <span class="query">cat</span>
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>
