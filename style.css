@@ -51,6 +51,7 @@ input[type="text"]:focus {
 
 
 /* RESULTS PAGE */
+/* TOP HEADER */
 
 .navbar {
 	background: #FAFAFA;
@@ -60,11 +61,12 @@ input[type="text"]:focus {
 	width: 225px;
 	margin: 18px 0 15px 100px;
 	float: left;
+	cursor: pointer;
 }
 .navbar-header img {
 	width: 25px;
 	float: left;
-	margin: 0 5px 0 30px;
+	margin: 0 5px 0 1px;
 }
 .navbar-header h2 {
 	float: left;
@@ -106,13 +108,23 @@ input[type="text"]:focus {
 }
 
 
+/* THE RESULTS */
 
-
-
-
-
-
-
+.messages {
+	margin-bottom: 40px;
+	font-size: 1.1em;
+	margin-left: 15px;
+}
+.query { color: #6A0900; }
+.photo { 
+	width: 100%;
+	margin-bottom: 40px;
+}
+.error {
+	color: #D00000;
+	font-style: italic;
+}
+.landingError { margin: 16px 0 0 10px; }
 
 .animate-show {
   opacity: 1;

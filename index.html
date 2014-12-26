@@ -20,33 +20,56 @@
 				<img src="images/insta.png" />
 				<h1>InstaSearch</h1>
 			</div>
-			<form>
-				<input type="text" name="query" size="30" autofocus required>
+			<form ng-submit='search()' name="instaForm">
+				<input type="text" name="query" size="30" autofocus required ng-model="tag" placeholder='Search for a keyword'>
 				<input type="submit" value="Submit">
 			</form>
+			<div class="error landingError" ng-hide="count">
+				Please do not include any spaces in your search.
+			</div>
 		</div>
 	</div>
 
-	<div class="navbar navbar-static-top" role="navigation">
-		<div class="container">
-			<div class="navbar-header">
-				<img src="images/insta.png" />
-				<h2>InstaSearch</h2>
-			</div>
-			<form class="searchBar navbar-form navbar-left" role="search">
-				<input type="text" name="query" size="30" autofocus required>
-				<div class="searchButton">
-					<input type="image" class="searchbutton" name="search" src="images/search.png" alt="Search">
-				</div>				
-			</form>
-		</div>
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="resultCount">
-				8 results for <span class="query">cat</span>
-			</div>
+	<div class="showResults" ng-hide="landing">
 
+		<div class="navbar navbar-static-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header" ng-click="home()">
+					<img src="images/insta.png" />
+					<h2>InstaSearch</h2>
+				</div>
+				<form class="searchBar navbar-form navbar-left" role="search" name="instaForm">
+					<input type="text" name="query" size="30" autofocus ng-model="tag" required>
+					<div class="searchButton" ng-click="search()">
+						<input type="image" class="searchbutton" name="search" src="images/search.png" alt="Search">
+					</div>				
+				</form>
+			</div>
+		</div>
+		<div class="container resultsCon">
+			<div class="row">
+				<div class="messages">
+					<div class="resultCount" ng-show="count">
+						{{photos.length}} results for <span class="query">#{{ query }}</span>
+					</div>
+					<div class="error" ng-hide="count">
+						Please be sure to enter a tag to search for.<br>
+						Do not use any spaces!
+					</div>
+				</div>
+				<div class="searcResults">
+					<div class="instaResult col-lg-3 col-sm-4 col-xs-6" ng-repeat="photo in photos">
+						<img class="photo" ng-src=" {{photo.images.low_resolution.url}} " />
+						<div class="details">
+							<img src="images/heart.png" class="heart">
+							<span class="likes">{{ photo.likes.count}}</span>
+							<a href="{{photo.images.low_resolution.url}}" download="{{query}}"><img src="images/download.png"></a>
+							<a href="{{ photo.link }}" target="_blank"><img src="images/insta.png"></a>
+						</div>
+					</div>
+				</div>
+
+			</div>
 		</div>
 	</div>
 </body>
