@@ -21,6 +21,7 @@ body {
 	margin: -5px 0 0 10px;
 	font-size: 3em;
 }
+.instaForm { width: 400px; }
 .landing input[type="text"] {
 	border: 1px solid #979797;
 	width: 400px;
@@ -42,7 +43,7 @@ input[type="text"]:focus {
 	line-height: 27px;
 	background: #fff;
 	padding: 1px 12px;
-	margin: 10px;
+	margin: 10px 0 0 0;
 	float: right;
 }
 .landing input[type="submit"]:hover {
@@ -104,7 +105,7 @@ input[type="text"]:focus {
 }
 .navbar input[type="image"] {
 	width: 15px;
-	margin: 6px auto;
+	margin: 6px 0 0 8px;
 }
 
 
@@ -118,39 +119,73 @@ input[type="text"]:focus {
 .query { color: #6A0900; }
 .photo { 
 	width: 100%;
-	margin-bottom: 40px;
+	margin-bottom: 60px;
 }
 .error {
 	color: #D00000;
 	font-style: italic;
 }
 .landingError { margin: 16px 0 0 10px; }
+.details {
+	position: absolute;
+	bottom: 30px;
+	width: 89%;
+}
+.details img {
+	width: 20px;
+}
+.actions {
+	float: right;
+}
+.heart {
+	margin-top: -1px;
+}
+.insta img {
+	width: 18px;
+}
+.download img {
+	width: 15px;
+	margin-right: 7px;
+}
 
-.animate-show {
+
+
+
+/* ANIMATING APPEARANCE OF PHOTOS */
+.instaResult.ng-enter,
+.instaResult.ng-leave {
+  -webkit-transition:0.75s linear all;
+  transition:0.75s linear all;
+}
+.instaResult.ng-enter,
+.instaResult.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+.instaResult.ng-leave,
+.instaResult.ng-enter.ng-enter-active {
   opacity: 1;
 }
 
-.animate-show.ng-hide-remove {
-  -webkit-transition: all linear 0.5s;
-  transition: all linear 0.5s;
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+	.navbar-header img { margin-left: 15px;}
 }
 
-.animate-show.ng-hide {
-  opacity: 0;
-}
+.sampleClass {float: left;}
 
-.notification-failed {
-  color:white;
-  padding:10px;
-  border:2px solid black;
-  background:maroon;
+@media (max-width: 555px) {
+	.logo img { width: 28px; }
+	.logo h1 { font-size: 2.5em; }
+	.navbar-header { float: none;}
+	.searchBar { margin: 0 0 15px 0;}
+	.instaForm {
+		width: 326px;
+		position: relative;
+		margin-left: 25px;
+	}
+	.landing input[type="text"] {
+		width: 315px;
+	}
+	.sampleClass {float: none;}
 }
-
-.notification-success {
-  color:white;
-  padding:10px;
-  border:2px solid black;
-  background:green;
-}
-
-label, input { display:block; }
