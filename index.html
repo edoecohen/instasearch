@@ -59,9 +59,9 @@
 					</div>
 				</div>
 				<div class="searcResults">
-					<div class="instaResult col-lg-3 col-sm-4 col-xs-6" ng-repeat="photo in photos" ng-mouseenter="show = true" ng-mouseleave="show = false">
+					<div class="instaResult col-lg-3 col-sm-4 col-xs-6" ng-repeat="photo in photos">
 						<img class="photo" ng-src=" {{photo.images.low_resolution.url}} " />
-						<div class="details" ng-show="show">
+						<div class="details">
 							<img src="images/heart.png" class="heart">
 							<span class="likes">{{ photo.likes.count}}</span>
 							<div class="actions">

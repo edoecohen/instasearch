@@ -130,6 +130,7 @@ input[type="text"]:focus {
 	position: absolute;
 	bottom: 30px;
 	width: 89%;
+	display: none;
 }
 .details img {
 	width: 20px;
@@ -148,6 +149,9 @@ input[type="text"]:focus {
 	margin-right: 7px;
 }
 
+.instaResult:hover > .details {
+  display:block;
+}
 
 
 
@@ -188,4 +192,6 @@ input[type="text"]:focus {
 		width: 315px;
 	}
 	.sampleClass {float: none;}
+
+	.details { display: block;}
 }
